@@ -10,6 +10,7 @@ export class AppComponent {
   massage: string = 'I am the Parent Component new one'
   newPost: string
   navPage: string = 'Enterooo Page'
+  isActive: boolean = true
 
   postList: Array<string> = ['Post1', 'Post2', 'Post3', 'Post4', 'Post5',]
 
