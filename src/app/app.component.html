@@ -1,0 +1,37 @@
+<h1>Angular App</h1>
+<p>ngSwitch</p>
+<button (click)="goPage('home')">Home</button>
+<button (click)="goPage('about')">About</button>
+<button (click)="goPage('contact')">Contact</button>
+
+<div [ngSwitch]="navPage">
+  <div *ngSwitchCase="'home'"><h2>Home Page</h2></div>
+  <div *ngSwitchCase="'about'"><h2>About Page</h2></div>
+  <div *ngSwitchCase="'contact'"><h2>Contact Page</h2></div>
+  <div *ngSwitchDefault>
+    <h2>{{ navPage }}</h2>
+  </div>
+</div>
+<hr />
+<p>ngFor</p>
+<input type="text" placeholder="add new post" [(ngModel)]="newPost" />
+<button (click)="addPost()">Add New Post</button>
+
+<div *ngIf="postList.length > 0; else noData">
+  <ul>
+    <li *ngFor="let post of postList; let i = index">
+      {{ post }} <button (click)="removePost(i)">x</button>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noData>
+  <div>No Data to Fetch !!!</div>
+</ng-template>
+
+<ul>
+  <li *ngFor="let name of postObject">{{ name.name }}</li>
+</ul>
+<hr />
+<app-post [fromParent1]="massage"></app-post>
+<app-post-form></app-post-form>

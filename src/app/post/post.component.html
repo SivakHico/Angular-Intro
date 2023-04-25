@@ -1,0 +1,15 @@
+<h2>Post Page</h2>
+<p>{{ title }}</p>
+<p>{{ fromParent1 }}</p>
+<app-post-list
+  [fromPost]="toPostList"
+  (outputMessage)="reciveMessage($event)"
+></app-post-list>
+
+<p>{{ messageFromPostList }}</p>
+<p>{{ outputMessageToParent }}</p>
+
+<input type="text" (keyup.enter)="submitForm(username.value)" #username>Submit
+
+<input type="text" [(ngModel)] = 'lastName' (keyup.enter)="saveValue()">
+<hr>
