@@ -1,0 +1,33 @@
+<h2>User Form!</h2>
+<input type="text" placeholder="name" [(ngModel)]="name" />
+<br /><br />
+<input type="text" placeholder="email" [(ngModel)]="email" />
+<br /><br />
+<textarea
+  name="message"
+  id="message"
+  cols="30"
+  rows="10"
+  placeholder="Message"
+  [(ngModel)]="message"
+></textarea>
+<br /><br />
+<button (click)="save()">Save</button>
+<br /><br />
+
+<table>
+  <thead>
+    <th>#</th>
+    <th>Name</th>
+    <th>E-mail</th>
+    <th>Messsage</th>
+    <th>Action</th>
+  </thead>
+  <tr *ngFor="let user of userInfo; let index = index">
+    <td>{{ index + 1 }}</td>
+    <td>{{ user.name }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ user.message }}</td>
+    <td><button (click)="removeUser(index)">X</button></td>
+  </tr>
+</table>

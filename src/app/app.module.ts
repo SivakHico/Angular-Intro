@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     PostListComponent,
-    PostFormComponent
+    PostFormComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
