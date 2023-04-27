@@ -1,4 +1,11 @@
 <h2>User Form!</h2>
+<div>
+  <h3>Users List</h3>
+  <button (click)="addUser()">Add User</button>
+  <ul>
+    <li *ngFor="let user of users; let index = index">{{ user.name }}</li>
+  </ul>
+</div>
 <input type="text" placeholder="name" [(ngModel)]="name" />
 <br /><br />
 <input type="text" placeholder="email" [(ngModel)]="email" />

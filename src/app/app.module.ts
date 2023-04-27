@@ -6,6 +6,7 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { UserComponent } from './user/user.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user',
@@ -10,6 +11,11 @@ export class UserComponent {
   email: string
   message: string
   userInfo: Array<any> = []
+  users: Array<any> = []
+
+  constructor(private userService: UserService) {
+    this.users = userService.userList
+  }
 
   save() {
     this.userInfo.push({
@@ -22,5 +28,10 @@ export class UserComponent {
 
   removeUser(index) {
     this.userInfo.splice(index, 1)
+  }
+
+  addUser() {
+    let data = { id: 66, name: "fcuk" }
+    this.userService.addNewUser(data)
   }
 }
