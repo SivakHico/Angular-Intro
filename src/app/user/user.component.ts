@@ -12,6 +12,7 @@ export class UserComponent {
   message: string
   userInfo: Array<any> = []
   users: Array<any> = []
+  data: Array<any> = [{ id: 66, name: "fcuk" }]
 
   constructor(private userService: UserService) {
     this.users = userService.userList
@@ -31,7 +32,6 @@ export class UserComponent {
   }
 
   addUser() {
-    let data = { id: 66, name: "fcuk" }
-    this.userService.addNewUser(data)
+    this.userService.addNewUser(this.data)
   }
 }
